@@ -6,6 +6,7 @@ export const styles = StyleSheet.create({
       backgroundColor: '#fff',
       alignItems: 'center',
       height: '100%',
+      width:'100%'
     },
     mapcontainer: {
       height: '70%',
@@ -14,7 +15,32 @@ export const styles = StyleSheet.create({
       alignItems: 'center',
       borderBottomWidth: 1,
       borderBottomColor: 'gray',
+      
     },
+    accurateLocationButton: {
+      position: 'absolute',
+      top: 10,
+      right: 10,
+      backgroundColor: 'blue',
+      padding: 10,
+      borderRadius: 5,
+      zIndex: 1000,
+    },
+    buttonText: {
+      color: 'white',
+      fontSize: 14,
+    },
+    loadingContainer: {
+      flex: 1,
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
+    loadingText: {
+      marginTop: 10,
+      fontSize: 16,
+      color: '#000',
+    },
+  
     map: {
       ...StyleSheet.absoluteFillObject,
     },
@@ -33,8 +59,8 @@ export const styles = StyleSheet.create({
       borderColor: 'gray',
     },
     Image: {
-      width: 150,
-      height: 150,
+      width: 200,
+      height: 200,
     },
     btnView: {
       flex: 1,

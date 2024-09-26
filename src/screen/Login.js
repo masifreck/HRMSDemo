@@ -6,7 +6,7 @@
 /* eslint-disable prettier/prettier */
 /* eslint-disable no-unused-vars */
 
-import React, { useCallback, useState ,useEffect} from "react";
+import React, { useCallback, useState } from "react";
 import {
     StyleSheet,
     Text,
@@ -45,7 +45,7 @@ export default function Login() {
           const backAction = () => {
             Alert.alert(
               'Exit App',
-              'Are you sure you want to exit from TREX Taste?',
+              'Are you sure you want to exit from HR?',
               [
                 {
                   text: 'No',

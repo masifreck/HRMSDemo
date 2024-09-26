@@ -67,8 +67,8 @@ const Home = () => {
         elevation: 5,
       }}>
         <Header />
+       {/* <View style={{ marginBottom: 30, marginTop: 10 }}>
         <Story />
-        <View style={{ marginBottom: 30, marginTop: 10 }}>
           <CustomSwitch
             selectionMode={1}
             option1="Employee"
@@ -76,7 +76,7 @@ const Home = () => {
             onSelectSwitch={() => { }}
             width={'90%'}
           />
-        </View>
+        </View>*/}
       </View>
       <ScrollView
         onScroll={handleScroll}

@@ -15,13 +15,13 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import { useNavigation } from '@react-navigation/native';
 
 const CustomDrawer = (props) => {
-    const navigation = useNavigation();
+    const navigation = useNavigation();  
 
     const HandleSignOut = async () => {
         try {
             console.log('sign out btn pressed');
-            await AsyncStorage.removeItem('username');
-            navigation.navigate('Login');
+            await AsyncStorage.removeItem('EmployeeId');
+            navigation.navigate('newlogin');
         } catch (error) {
             console.error('Error signing out:', error);
         }

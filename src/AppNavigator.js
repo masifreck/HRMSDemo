@@ -11,6 +11,8 @@ import LeaveSts from './screen/LeaveSts';
 import NewReimbursementRequest from './screen/NewReimbursementRequest';
 import NewExpense from './screen/NewExpense';
 import ReimbursementSts from './screen/ReimbursementSts';
+import NewSplash from '../screen/Splash';
+import Newlogin from './screen/Newlogin';
 
 const Stack = createNativeStackNavigator();
 
@@ -25,12 +27,20 @@ const AppNavigator = () => {
                     component={Onboarding}
                     options={{ headerShown: false }}
                 /> */}
+           
+                
+<Stack.Screen 
+name='splash' component={NewSplash} 
+options={{headerShown:false}}/>
+
+<Stack.Screen name='newlogin' component={Newlogin}/>
+
    <Stack.Screen
                     name='Login'
                     component={Login}
                     options={{ headerShown: false }} />
 
-                <Stack.Screen
+<Stack.Screen
                     name='DrawerNavigation'
                     component={DrawerNavigation}
                     options={{ headerShown: false }} />

@@ -1,29 +1,39 @@
-import {View, Text, StyleSheet, Image, StatusBar} from 'react-native';
-import React, {useEffect} from 'react';
-import {useNavigation} from '@react-navigation/native';
+import { View, Text, StyleSheet, Image, StatusBar } from 'react-native';
+import React, { useEffect } from 'react';
+import { useNavigation } from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+
 const Splash = () => {
   const navigation = useNavigation();
-  useEffect(() => {
-    setTimeout(getLoginDetails, 3000);
-  }, []);
 
-  const getLoginDetails = async () => {
-    let Status = await AsyncStorage.getItem('response');
-    console.log(Status);
-    if (Status !== null && Status.includes('SUCCESS')) {
-      navigation.replace('MainScreen');
-    } else {
-      navigation.replace('Login');
-    }
-  };
+  useEffect(() => {
+    const checkLoginStatus = async () => {
+      try {
+        const employeeId = await AsyncStorage.getItem('EmployeeId');
+        console.log('Employee ID found in splash:', employeeId);
+        
+        // Navigate based on EmployeeId presence
+        if (employeeId !== null) {
+          navigation.replace('DrawerNavigation');
+        } else {
+          navigation.replace('newlogin');
+        }
+      } catch (error) {
+        console.error('Error reading EmployeeId from AsyncStorage:', error);
+      }
+    };
+
+    // Add a delay to simulate a splash screen
+    setTimeout(checkLoginStatus, 3000);
+  }, [navigation]);
 
   return (
     <View style={styles.container}>
       <StatusBar translucent backgroundColor="transparent" />
       <View style={styles.upper}>
+        <Image style={{ width: 100, height: 100 }} source={require('../src/assets/mypic.jpeg')} />
         <View>
-          <Text style={styles.company_name}>QR Scan</Text>
+          <Text style={styles.company_name}>HR MS</Text>
         </View>
       </View>
       <View style={styles.lower}>
@@ -36,15 +46,14 @@ const Splash = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#276A76',
-    paddingTop: StatusBar.currentHeight,
+    backgroundColor: '#aa18ea',
+    paddingTop: StatusBar.currentHeight || 0,
   },
-
   upper: {
     flex: 25,
     marginTop: '10%',
     marginHorizontal: '5%',
-    backgroundColor: '#276A76',
+    backgroundColor: '#aa18ea',
     justifyContent: 'center',
     alignItems: 'center',
     flexDirection: 'column',
@@ -61,7 +70,6 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     letterSpacing: 5,
   },
-
   tranzol: {
     fontSize: 10,
     position: 'absolute',
