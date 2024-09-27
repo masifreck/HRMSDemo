@@ -9,7 +9,7 @@ const LeaveApproval = () => {
     const pendingRequests = [
         {
             id: '1',
-            employeeName: 'Satyaranjan Ojha',
+            employeeName: 'Mohd Asif',
             branch: 'ELPL-FLEET BACK OFFICE',
             department: 'Fleet Operations',
             designation: 'Supervisor',
@@ -23,7 +23,7 @@ const LeaveApproval = () => {
         },
         {
             id: '2',
-            employeeName: 'Satyaranjan Ojha',
+            employeeName: 'Mohd Asif',
             branch: 'ELPL-FLEET BACK OFFICE',
             department: 'Fleet Operations',
             designation: 'Supervisor',
@@ -37,7 +37,7 @@ const LeaveApproval = () => {
         },
         {
             id: '3',
-            employeeName: 'Satyaranjan Ojha',
+            employeeName: 'Mohd Asif',
             branch: 'ELPL-FLEET BACK OFFICE',
             department: 'Fleet Operations',
             designation: 'Supervisor',
@@ -51,7 +51,7 @@ const LeaveApproval = () => {
         },
         {
             id: '4',
-            employeeName: 'Satyaranjan Ojha',
+            employeeName: 'Mohd Asif',
             branch: 'ELPL-FLEET BACK OFFICE',
             department: 'Fleet Operations',
             designation: 'Supervisor',
@@ -65,7 +65,7 @@ const LeaveApproval = () => {
         },
         {
             id: '5',
-            employeeName: 'Satyaranjan Ojha',
+            employeeName: 'Mohd Asif',
             branch: 'ELPL-FLEET BACK OFFICE',
             department: 'Fleet Operations',
             designation: 'Supervisor',
@@ -79,7 +79,7 @@ const LeaveApproval = () => {
         },
         {
             id: '6',
-            employeeName: 'Satyaranjan Ojha',
+            employeeName: 'Mohd Asif',
             branch: 'ELPL-FLEET BACK OFFICE',
             department: 'Fleet Operations',
             designation: 'Supervisor',
@@ -93,7 +93,7 @@ const LeaveApproval = () => {
         },
         {
             id: '7',
-            employeeName: 'Satyaranjan Ojha',
+            employeeName: 'Mohd Asif',
             branch: 'ELPL-FLEET BACK OFFICE',
             department: 'Fleet Operations',
             designation: 'Supervisor',
@@ -107,7 +107,7 @@ const LeaveApproval = () => {
         },
         {
             id: '8',
-            employeeName: 'Satyaranjan Ojha',
+            employeeName: 'Mohd Asif',
             branch: 'ELPL-FLEET BACK OFFICE',
             department: 'Fleet Operations',
             designation: 'Supervisor',
@@ -126,7 +126,7 @@ const LeaveApproval = () => {
     const history = [
         {
             id: '1',
-            employeeName: 'Satyaranjan Ojha',
+            employeeName: 'Mohd Asif',
             branch: 'ELPL-FLEET BACK OFFICE',
             department: 'Fleet Operations',
             designation: 'Supervisor',

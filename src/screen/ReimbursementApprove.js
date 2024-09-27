@@ -9,7 +9,7 @@ const ReimbursementApprove = () => {
     const pendingRequests = [
         {
             id: '1',
-            employeeName: 'Satyaranjan Ojha',
+            employeeName: 'Mohd Asif',
             branch: 'ELPL-FLEET BACK OFFICE',
             department: 'Fleet Operations',
             designation: 'Supervisor',
@@ -28,7 +28,7 @@ const ReimbursementApprove = () => {
     const history = [
         {
             id: '1',
-            employeeName: 'Satyaranjan Ojha',
+            employeeName: 'Mohd Asif',
             branch: 'ELPL-FLEET BACK OFFICE',
             department: 'Fleet Operations',
             designation: 'Supervisor',

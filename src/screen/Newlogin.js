@@ -107,7 +107,7 @@ return (
           />
           <TouchableOpacity 
             style={styles.loginbtn}
-            onPress={myFetchPostRequest}
+            onPress={()=>navigation.navigate('DrawerNavigation')}
           >
             <Text style={styles.btntext}>LOG IN</Text>
           </TouchableOpacity>

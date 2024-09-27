@@ -266,7 +266,7 @@ const [EmployeeId,setEmployeeId]=useState('')
                 <Pressable onPress={() => setShowPassword(!showPassword)}>
                     <Text style={{ color: 'blue' }}>{showPassword ? 'Hide' : 'Show'} Password</Text>
                 </Pressable>
-                <TouchableOpacity onPress={login}>
+                <TouchableOpacity onPress={()=>navigation.navigate('DrawerNavigation')}>
                     <Animated.View style={[styles.formButton, formButtonAnimatedStyle]}>
                         <Text style={{ color: 'white', fontSize: 18 }}>Login</Text>
                     </Animated.View>

@@ -46,7 +46,7 @@ const CustomDrawer = (props) => {
                             fontFamily: 'Roboto-Medium',
                             marginBottom: 5,
                         }}>
-                        Exim Logistics
+                        Tranzol
                     </Text>
                     <View style={{ flexDirection: 'row' }}>
                         <Text
@@ -55,7 +55,7 @@ const CustomDrawer = (props) => {
                                 fontFamily: 'Roboto-Regular',
                                 marginRight: 5,
                             }}>
-                            @eximlogisticspvtltd
+                            @tranzol.com
                         </Text>
                     </View>
                 </ImageBackground>

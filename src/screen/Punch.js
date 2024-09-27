@@ -15,7 +15,6 @@ import Geolocation from 'react-native-geolocation-service';
 import { styles } from './PunchStyle';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import RNRestart from 'react-native-restart';
-import DeviceInfo from 'react-native-device-info'; // Import DeviceInfo
 
 const Punch = ({ navigation }) => {
   const camera = useRef(null);
@@ -27,15 +26,14 @@ const Punch = ({ navigation }) => {
   const [punchloading, setPuchLoading] = useState(false);
   const [loadingLocation, setLoadingLocation] = useState(false);
   const mapViewRef = React.useRef(null);
-  const { hasPermission } = useCameraPermission();
+  const device = useCameraDevice('front');
+  const {hasPermission} = useCameraPermission();
+
+ 
 
   useEffect(() => {
     // Check if developer mode is enabled
-    DeviceInfo.isDevelopmentMode().then(isDevMode => {
-      if (isDevMode) {
-        Alert.alert('Developer Mode Enabled', 'You cannot punch while developer mode is enabled. Please turn it off.');
-      }
-    });
+   
 
     const getEmployeeId = async () => {
       try {
@@ -48,10 +46,121 @@ const Punch = ({ navigation }) => {
       }
     };
 
-    getEmployeeId();
+    //getEmployeeId();
     getLocation();
   }, []);
 
+
+  const showAlert = () => {
+    Alert.alert(
+      'Info',
+      'Restart App after Permissions',
+      [
+        {
+          text: 'OK',
+          onPress: () => checkAndRequestCameraPermission(),
+        },
+      ],
+      {cancelable: false},
+    );
+  };
+  async function checkAndRequestCameraPermission() {
+    console.log('restart kindly===========================================');
+    console.log(
+      PermissionsAndroid.RESULTS.GRANTED,
+      PermissionsAndroid.PERMISSIONS.CAMERA,
+    );
+
+    try {
+      // Check if the permission is already granted
+      const granted = await PermissionsAndroid.check(
+        PermissionsAndroid.PERMISSIONS.CAMERA,
+      );
+
+      if (granted) {
+        console.log('Camera permission already granted');
+        return PermissionsAndroid.RESULTS.GRANTED;
+      } else {
+        // If permission is not granted, request it
+        const requestResult = await PermissionsAndroid.request(
+          PermissionsAndroid.PERMISSIONS.CAMERA,
+          {
+            title: 'Camera Permission',
+            message: 'Note : After Accepting, It restarts',
+            buttonNeutral: 'Ask Me Later',
+            buttonNegative: 'Cancel',
+            buttonPositive: 'OK',
+          },
+        );
+
+        if (requestResult === PermissionsAndroid.RESULTS.GRANTED) {
+          RNRestart.restart();
+          console.log('Camera permission granted');
+          console.log(
+            'restart kindly===========================================',
+          );
+          console.log(
+            PermissionsAndroid.RESULTS.GRANTED,
+            PermissionsAndroid.PERMISSIONS.CAMERA,
+          );
+        } else {
+          console.log('Camera permission denied');
+          // Optionally, you can show an alert to inform the user
+          Alert.alert(
+            'Permission Denied',
+            'You denied camera access. This app requires camera access to function properly.',
+            [{text: 'OK', onPress: () => console.log('OK Pressed')}],
+            {cancelable: false},
+          );
+        }
+
+        return requestResult;
+      }
+    } catch (error) {
+      console.error(`Error checking/requesting camera permission: ${error}`);
+      return PermissionsAndroid.RESULTS.DENIED;
+    }
+  }
+  const NoCameraErrorView = () => (
+    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+      <Text
+        style={{
+          color: '#276A76',
+          textAlign: 'center',
+          fontSize: isFine ? 13 : 15,
+
+          textTransform: 'uppercase',
+          fontFamily: 'PoppinsBold',
+          marginTop: 5,
+          letterSpacing: 1,
+        }}>
+        Allow Camera Permission
+      </Text>
+      <TouchableOpacity style={styles.button2} onPress={showAlert}>
+        <Text style={styles.text}>Allow</Text>
+      </TouchableOpacity>
+    </View>
+  );
+
+  // console.log('Device:', device);
+
+  // useEffect(() => {
+  //   if (!hasPermission) {
+  //     setCameraActive(false); // Disable camera if permission denied
+  //   }
+  // }, [hasPermission]);
+
+  if (!hasPermission) {
+    // Handle permission denied case
+    console.log('Permission denied');
+    return <NoCameraErrorView />;
+  }
+
+  if (device === null) {
+    // Handle no camera device found case
+    console.log('No camera device found');
+    return <NoCameraErrorView />;
+  }
   const getLocation = async () => {
     const requestLocationPermission = async () => {
       try {
@@ -170,13 +279,13 @@ const Punch = ({ navigation }) => {
         <Text style={styles.text}>
           Latitude: {loadingLocation ? <ActivityIndicator size="small" color="#0000ff" /> : latitude}
         </Text>
-        <Text style={styles.text}>EmployeeId: {EmployeeId}</Text>
+        <Text style={styles.text}>EmployeeId: 44</Text>
       </View>
       <View style={styles.btnView}>
         <TouchableOpacity style={styles.btn} onPress={() => setShowCamera(true)}>
           <Text style={styles.txt}>Take Selfie</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.btn} onPress={postPunchData} disabled={punchloading}>
+        <TouchableOpacity style={styles.btn} onPress={()=>Alert.alert('Sucessfully','Puch Demo')} disabled={punchloading}>
           {punchloading ? (
             <ActivityIndicator size="small" color="#ffffff" />
           ) : (

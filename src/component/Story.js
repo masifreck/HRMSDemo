@@ -15,7 +15,7 @@ export default function Story() {
                         return (
                             <TouchableOpacity key={index} >
                                 <View style={styles.avatarContainer}>
-                                    <LinearGradient colors={['#833AB4', '#C13584', '#C13584']}
+                                    <LinearGradient colors={['white', 'white', '#C13584']}
                                         style={styles.border} >
                                         <Image
                                             style={[styles.userAvatar, { borderColor: "white" }]}

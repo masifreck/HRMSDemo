@@ -52,7 +52,7 @@ const EProfile = () => {
                     marginBottom: 4,
                     fontWeight: '500'
                   }}>
-                  Mr. Satyaranjan Ojha
+                  Mr. Mohd Asif
                 </Text>
                 <Text style={{ fontSize: 13, color: 'white', fontWeight: '500', marginBottom: 4, }}>
                   BRANCH : ELPL-CO-BHUBANESWAR</Text>
@@ -63,7 +63,7 @@ const EProfile = () => {
                     fontSize: 13,
                     marginBottom: 4,
                   }}>
-                  satyaranjanojha@gmail.com
+                  demo@gmail.com
                 </Text>
                 <Text style={{
                   color: '#fff',
@@ -102,11 +102,11 @@ const EProfile = () => {
               <View >
                 <View>
                   <Text style={styles.txt1}>Mother's Name :</Text>
-                  <Text style={styles.txt2}>Manjulata Ojha</Text>
+                  <Text style={styles.txt2}>Dummy name</Text>
                 </View>
                 <View style={{ marginTop: 10 }}>
                   <Text style={styles.txt1}>Company :</Text>
-                  <Text style={styles.txt2}>Exim Logistics Pvt. Ltd.</Text>
+                  <Text style={styles.txt2}>Tranzol Pvt. Ltd.</Text>
                 </View>
                 <View style={{ marginTop: 10 }}>
                   <Text style={styles.txt1}>Department :</Text>
@@ -306,7 +306,7 @@ const EProfile = () => {
                 </View>
                 <View style={{ marginTop: 10 }}>
                   <Text style={styles.txt1}>Account Holder Name :</Text>
-                  <Text style={styles.txt2}>Satyaranjan Ojha</Text>
+                  <Text style={styles.txt2}>Mohd Asif</Text>
                 </View>
               </View>
 
@@ -519,11 +519,11 @@ const PanCard = () => {
         </View>
         <View style={{ marginTop: 6, marginLeft: 16 }}>
           <Text style={styles.txt3}>Name :</Text>
-          <Text style={styles.txt4}>{'Satyaranjan Ojha'.toUpperCase()}</Text>
+          <Text style={styles.txt4}>{'Mohd Asif'.toUpperCase()}</Text>
         </View>
         <View style={{ marginTop: 6, marginLeft: 16 }}>
           <Text style={styles.txt3}>Father's Name :</Text>
-          <Text style={styles.txt4}>{'Prafulla Kumar Ojha'.toUpperCase()}</Text>
+          <Text style={styles.txt4}>{'Shafique Ahmad'.toUpperCase()}</Text>
         </View>
         <View style={{ marginTop: 6, marginLeft: 16, flexDirection: 'row', alignItems: 'center' }}>
           <Text style={styles.txt3}>Date of Barth :</Text>
@@ -548,7 +548,7 @@ const AdharCard = () => {
       >
         <View style={{ marginTop: 55, marginLeft: 95, flexDirection: 'row', alignItems: 'center' }}>
           <Text style={styles.txt5}>Name :</Text>
-          <Text style={styles.txt6}>Satyaranjan Ojha</Text>
+          <Text style={styles.txt6}>Mohd Asif</Text>
         </View>
         <View style={{ marginTop: 4, marginLeft: 95, flexDirection: 'row', alignItems: 'center' }}>
           <Text style={styles.txt5}>DOB :</Text>
